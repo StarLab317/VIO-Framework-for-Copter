@@ -2,7 +2,7 @@
 
 本次课程设计需要解决的任务是通过一系列的传感器定位方案和控制手段使得无人机能够在如下地图中稳定的自主飞行、路径规划以及对地面物体的目标识别。
 
-![地图](C:\Users\Administrator\Desktop\无人机报告\地图.png)
+![地图](.\地图.png)
 
 ## 1. Ardupilot飞控
 
@@ -154,11 +154,11 @@ VISO_TYPE = 2               //打开intel T265视觉里程计
 
 物理连接如下图所示：
 
-![connect](C:\Users\Administrator\Desktop\无人机报告\connect.png)
+![connect](.\connect.png)
 
 数据流如下所示：
 
-![dataflow](C:\Users\Administrator\Desktop\无人机报告\dataflow.png)
+![dataflow](.\dataflow.png)
 
 我们首先通过`librealsense`中提供的API读取出intel T265计算得到的位姿和跟踪置信度，随后调用`vision_to_mavros`库中的`t265_to_mavlink.py`将intel T265输出的位姿转换成`mavros`通信格式，最终通过`mavlink`指令发送给`Ardupilot`飞控。`t265_to_mavlink.py`代码如下：
 
